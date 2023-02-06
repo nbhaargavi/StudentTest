@@ -1,6 +1,9 @@
 package org.example;
 import java.util.*;
+import java.util.logging.*;
+import java.util.logging.Logger;
 class Student {
+    Logger l=Logger.getLogger("kitty");
     String name;
     int age;
     protected int gpa;
@@ -28,37 +31,43 @@ class Student {
 }
 public class StudentTest {
     public static void main(String[] args) {
+        Logger l=Logger.getLogger("kitty");
         List<Student> mylist = new ArrayList<Student>();
-        Scanner in =new Scanner(System.in);
         Scanner sc=new Scanner(System.in);
-        System.out.println("enter the number of students");
+        Scanner in=new Scanner(System.in);
+        l.info("enter the number of students");
         int n=sc.nextInt();
         for (int i=0;i<n;i++)
         {
-            System.out.println("Enter the student name");
+            l.info("Enter the student name");
             String name=in.nextLine();
-            System.out.println("Enter the student age");
+
+            l.info("Enter the student age");
             int age=sc.nextInt();
-            System.out.println("Enter the student gpa");
+
+            l.info("Enter the student gpa");
             int gpa=sc.nextInt();
+
             Student s=new Student(name,age,gpa);
             mylist.add(s);
 
-            System.out.println("Name :"+s.getname());
-            System.out.println("age  :"+s.getage());
-            System.out.println("gpa :"+s.getgpa());
+            l.log(Level.INFO,() ->"Name :"+s.getname());
+            l.log(Level.INFO,() ->"age  :"+s.getage());
+            l.log(Level.INFO,() ->"gpa :"+s.getgpa());
         }
         Collections.sort(mylist, new Comparator <Student>() {
             public int compare(Student s1, Student s2) {
                 return Double.compare(s2.getgpa(), s1.getgpa());
             }
         });
-        System.out.println("After sorted :");
+        l.info("After sorted :");
         for(int i=0;i<n;i++) {
-            System.out.printf("Name :"+mylist.get(i).getname()+" ");
-            System.out.printf("Gpa :"+mylist.get(i).getgpa());
-            System.out.println("");
+            int finalI = i;
+            l.log(Level.INFO,() ->"Name :"+mylist.get(finalI).getname());
+            int finalI1 = i;
+            l.log(Level.INFO,() ->"Gpa :"+mylist.get(finalI1).getgpa());
         }
         sc.close();
     }
 }
+
