@@ -36,9 +36,9 @@ public class StudentTest {
         });
         l.info("After sorted :");
         for(int i=0;i<n;i++) {
-            int finalI = i;
-            l.log(Level.INFO,() ->"Name :"+mylist.get(finalI).getname());
-            l.log(Level.INFO,() ->"Gpa :"+mylist.get(finalI).getgpa());
+           
+            l.log(Level.INFO,() ->"Name :"+mylist.get(i).getname());
+            l.log(Level.INFO,() ->"Gpa :"+mylist.get(i).getgpa());
         }
         sc.close();
     }
