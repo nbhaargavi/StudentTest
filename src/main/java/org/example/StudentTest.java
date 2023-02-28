@@ -2,33 +2,7 @@ package org.example;
 import java.util.*;
 import java.util.logging.*;
 import java.util.logging.Logger;
-class Student {
-    Logger l=Logger.getLogger("kitty");
-    String name;
-    int age;
-    protected int gpa;
-    Student(String name, int age, int gpa) {
-        this.name = name;
-        this.age = age;
-        this.gpa = gpa;
-    }
-    public void setName(String name, int age, int gpa) {
-        this.name = name;
-        this.age = age;
-        this.gpa = gpa;
-    }
-    public String getname() {
-        return this.name;
-    }
 
-    public int getage() {
-        return this.age;
-    }
-
-    public int getgpa() {
-        return gpa;
-    }
-}
 public class StudentTest {
     public static void main(String[] args) {
         Logger l=Logger.getLogger("kitty");
