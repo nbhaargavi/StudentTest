@@ -38,8 +38,7 @@ public class StudentTest {
         for(int i=0;i<n;i++) {
             int finalI = i;
             l.log(Level.INFO,() ->"Name :"+mylist.get(finalI).getname());
-            int finalI1 = i;
-            l.log(Level.INFO,() ->"Gpa :"+mylist.get(finalI1).getgpa());
+            l.log(Level.INFO,() ->"Gpa :"+mylist.get(finalI).getgpa());
         }
         sc.close();
     }
